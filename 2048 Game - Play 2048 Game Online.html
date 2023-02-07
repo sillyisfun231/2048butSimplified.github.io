@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>2048 Game - Play 2048 Game Online</title>
+<link href="./2048 Game - Play 2048 Game Online_files/main.css" rel="stylesheet" type="text/css">
+<link href="./2048 Game - Play 2048 Game Online_files/flag-icon.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="https://2048game.com/favicon.ico">
+<link rel="apple-touch-icon" href="https://2048game.com/meta/apple-touch-icon.png">
+<style>
+  .score-container:after {
+    content: "Score";
+  }
+
+  .best-container:after {
+    content: "Best";
+  }
+</style>
+<meta property="og:image" content="/meta/apple-touch-icon.png">
+<meta name="twitter:description" content="Join the numbers and get to the 2048 tile! Careful: this game is extremely addictive!">
+<meta name="twitter:card" content="app">
+<meta name="twitter:site" content="2048game.com">
+<meta name="twitter:title" content="2048">
+<meta name="twitter:url" content="https://2048game.com">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="./2048 Game - Play 2048 Game Online_files/f(5).txt"></script><script src="./2048 Game - Play 2048 Game Online_files/f(6).txt"></script><script src="./2048 Game - Play 2048 Game Online_files/f(7).txt" id="google_shimpl"></script><script type="text/javascript" async="" src="./2048 Game - Play 2048 Game Online_files/ga.js"></script><script async="" src="./2048 Game - Play 2048 Game Online_files/f(8).txt" type="text/javascript"></script>
+
+<meta http-equiv="origin-trial" content="Az6AfRvI8mo7yiW5fLfj04W21t0ig6aMsGYpIqMTaX60H+b0DkO1uDr+7BrzMcimWzv/X7SXR8jI+uvbV0IJlwYAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+USTya+tNvDPaxUgJooz+LaVk5hPoAxpLvSxjogX4Mk8awCTQ9iop6zJ9d5ldgU7WmHqBlnQB41LHHRFxoaBwoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7FovoGr67TUBYbnY+Z0IKoJbbmRmB8fCyirUGHavNDtD91CiGyHHSA2hDG9r9T3NjUKFi6egL3RbgTwhhcVDwUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="Az6AfRvI8mo7yiW5fLfj04W21t0ig6aMsGYpIqMTaX60H+b0DkO1uDr+7BrzMcimWzv/X7SXR8jI+uvbV0IJlwYAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+USTya+tNvDPaxUgJooz+LaVk5hPoAxpLvSxjogX4Mk8awCTQ9iop6zJ9d5ldgU7WmHqBlnQB41LHHRFxoaBwoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7FovoGr67TUBYbnY+Z0IKoJbbmRmB8fCyirUGHavNDtD91CiGyHHSA2hDG9r9T3NjUKFi6egL3RbgTwhhcVDwUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="Az6AfRvI8mo7yiW5fLfj04W21t0ig6aMsGYpIqMTaX60H+b0DkO1uDr+7BrzMcimWzv/X7SXR8jI+uvbV0IJlwYAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+USTya+tNvDPaxUgJooz+LaVk5hPoAxpLvSxjogX4Mk8awCTQ9iop6zJ9d5ldgU7WmHqBlnQB41LHHRFxoaBwoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7FovoGr67TUBYbnY+Z0IKoJbbmRmB8fCyirUGHavNDtD91CiGyHHSA2hDG9r9T3NjUKFi6egL3RbgTwhhcVDwUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><link rel="preload" href="./2048 Game - Play 2048 Game Online_files/f(9).txt" as="script"><script type="text/javascript" src="./2048 Game - Play 2048 Game Online_files/f(9).txt"></script><link rel="preload" href="./2048 Game - Play 2048 Game Online_files/f(9).txt" as="script"><script type="text/javascript" src="./2048 Game - Play 2048 Game Online_files/f(9).txt"></script></head>
+<body style="padding: 15px 0px 154px;">
+<div class="mobile-top"></div>
+<div class="container">
+<div class="heading">
+<div class="scores-container">
+<div class="score-container">0</div>
+<div class="best-container">0</div>
+<a class="restart-button">New Game</a>
+</div>
+</div>
+<div class="game-container">
+<div class="game-message">
+<p></p>
+<div class="lower">
+<a class="keep-playing-button">Keep playing</a>
+<a class="retry-button">Try again</a>
+<div class="score-sharing">
+</div>
+</div>
+</div>
+<div class="grid-container">
+<div class="grid-row">
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+</div>
+<div class="grid-row">
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+</div>
+<div class="grid-row">
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+</div>
+<div class="grid-row">
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+</div>
+</div>
+<div class="tile-container"><div class="tile tile-2 tile-position-1-1 tile-new"><div class="tile-inner">2</div></div><div class="tile tile-2 tile-position-3-1 tile-new"><div class="tile-inner">2</div></div></div>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+
+<script src="./2048 Game - Play 2048 Game Online_files/bind_polyfill.js" type="text/javascript"></script>
+<script src="./2048 Game - Play 2048 Game Online_files/classlist_polyfill.js" type="text/javascript"></script>
+<script src="./2048 Game - Play 2048 Game Online_files/animframe_polyfill.js" type="text/javascript"></script>
+<script src="./2048 Game - Play 2048 Game Online_files/keyboard_input_manager.js" type="text/javascript"></script>
+<script src="./2048 Game - Play 2048 Game Online_files/html_actuator_local.js" type="text/javascript"></script>
+<script src="./2048 Game - Play 2048 Game Online_files/grid.js" type="text/javascript"></script>
+<script src="./2048 Game - Play 2048 Game Online_files/tile.js" type="text/javascript"></script>
+<script src="./2048 Game - Play 2048 Game Online_files/local_storage_manager.js" type="text/javascript"></script>
+<script src="./2048 Game - Play 2048 Game Online_files/game_manager.js" type="text/javascript"></script>
+<script src="./2048 Game - Play 2048 Game Online_files/application.js" type="text/javascript"></script>
+
+</html>

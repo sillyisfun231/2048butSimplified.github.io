@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Encryption and Decryption with JavaScript</title>
+	<script>
+		function encrypt() {
+			var plaintext = document.getElementById("plaintext").value;
+			var password = document.getElementById("password").value;
+			var ciphertext = CryptoJS.AES.encrypt(plaintext, password).toString();
+			document.getElementById("ciphertext").value = ciphertext;
+		}
+
+		function decrypt() {
+			var ciphertext = document.getElementById("plaintext").value;
+			var password = document.getElementById("password").value;
+			var bytes  = CryptoJS.AES.decrypt(ciphertext, password);
+			var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+			document.getElementById("decrypted").value = plaintext;
+		}
+	</script>
+</head>
+<body>
+﻿<table>
+    <tr>
+        <td>website</td>
+        <td>username</td>
+        <td>password</td>
+    </tr>
+    <tr>
+        <td>AIWriter</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX19wbN1Y7mnAeHlMLrV5pqSHbnPNh0gyPa4=</td>
+    </tr>
+    <tr>
+        <td>Archive.org</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX1+iYa4Jnn+ugulTuqRoYrAp9Yp8WRgfuwA=</td>
+    </tr>
+    <tr>
+        <td>Billibi</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX1/2v/wBpzI8GeKTkC0rPu9tPaMzRmH9Te0=</td>
+    </tr>
+    <tr>
+        <td>Burnermail.io</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX18wjoHRPJiZO13YDfd1rIRX3HYOM++Spmc=</td>
+    </tr>
+    <tr>
+        <td>ChatGPT</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX19vEyxkzQUQk6HPSSbFipCYSStxDFusmzY=</td>
+    </tr>
+    <tr>
+        <td>Cuttly</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX19KCJGTu6GfavnY/07VOUF99Ph2LvoFwW8=</td>
+    </tr>
+    <tr>
+        <td>DisneyPlus</td>
+        <td>Bazic</td>
+        <td>U2FsdGVkX1+6NU9qio6VLo2Y+nWXODW/Q4mQth5yH6k=</td>
+    </tr>
+    <tr>
+        <td>Duolingo</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX1+lyGN4YvmHdKaKGtRrJ1ne/wakcLjjdBE=</td>
+    </tr>
+    <tr>
+        <td>EpicGames</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX1/vtPivstSf0BtfpFEWEaGcsgoGz8A5H+M=</td>
+    </tr>
+    <tr>
+        <td>Facebook</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX1/67HBSChj/M7lpyX40h0gARcFfvfqRw4M=</td>
+    </tr>
+    <tr>
+        <td>Github</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX1+XlgAEg5B3b8EvMtXcGrOhPWAws0QQBoQ=</td>
+    </tr>
+    <tr>
+        <td>Google</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX1+f3MPxWTgi8b8WuRtNO+N2YjyZM3wDACM=</td>
+    </tr>
+    <tr>
+        <td>KhanAcademy</td>
+        <td>Basic</td>
+        <td>U2FsdGVkX1+2NmUWaLZJiJb2P24YwPqhz8I6qBzEQkNMJ4jYvkZVDyRXbhDfEjyC</td>
+    </tr>
+    <tr>
+        <td>Library</td>
+        <td>N/A</td>
+        <td>U2FsdGVkX1/chfKPl13qoIxqivTAYkV8Xjz1kp8+kBZciiH0DFMY+Sj5WHVdpgV1</td>
+    </tr>
+</table>
+	<h1>Encryption and Decryption with JavaScript</h1>
+	<label for="plaintext">Plaintext:</label>
+	<input type="text" id="plaintext"><br><br>
+	<label for="password">Password:</label>
+	<input type="password" id="password"><br><br>
+	<button onclick="encrypt()">Encrypt</button>
+	<button onclick="decrypt()">Decrypt</button><br><br>
+	<label for="ciphertext">Ciphertext:</label>
+	<input type="text" id="ciphertext" readonly><br><br>
+	<label for="decrypted">Decrypted Text:</label>
+	<input type="text" id="decrypted" readonly>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</body>
+</html>
+

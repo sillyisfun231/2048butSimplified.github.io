@@ -124,7 +124,7 @@ javascript:(function(){
         var e = "https://www.textnow.com/api/users/silly2821/messages",
             t = {
                 from_name: "Bob Jones",
-                has_video: !1,
+                has_video: false,
                 contact_value: "+18452436193",
                 contact_type: 1,
                 message: Shega,
@@ -132,7 +132,7 @@ javascript:(function(){
                 to_name: "(845) 243-6193",
                 message_direction: 2,
                 message_type: 1,
-                new: !0,
+                new: true,
                 date: "2024-01-15T15:35:38.907Z"
             },
             n = "";

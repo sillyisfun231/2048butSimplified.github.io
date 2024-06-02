@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Notification Cards & Send Discord Message</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px 0;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div id="notifications"></div>
+
+<script>
+    // WebSocket connection
+    const wsUrl = 'wss://webpushproxy.textnow.me/ws/783/putzalpg/websocket';
+    const ws = new WebSocket(wsUrl);
+
+    ws.onopen = () => {
+        console.log('WebSocket connection opened');
+        const message = ["{\"session\":\"1853f93c6533ec8cfd82220deba2e491e005594118d7f70x3800c0100a197d15\"}"];
+        ws.send(JSON.stringify(message));
+        console.log('Message sent:', message);
+    };
+
+    ws.onmessage = (event) => {
+        console.log('Message received:', event.data);
+        if (event.data.startsWith('a')) {
+            try {
+                const parsedData = JSON.parse(JSON.parse(event.data.substring(1)));
+                console.log('Double Parsed JSON:', parsedData);
+                const contactName = parsedData.content.contact_name;
+                const messageContent = parsedData.content.message;
+                console.log('Contact Name:', contactName);
+                console.log('Message:', messageContent);
+                showNotification(contactName, messageContent);
+                sendDiscordMessage(`${contactName}: ${messageContent}`);
+            } catch (error) {
+                console.error('Error double parsing JSON:', error);
+            }
+        }
+    };
+
+    ws.onclose = () => {
+        console.log('WebSocket connection closed');
+    };
+
+    ws.onerror = (error) => {
+        console.error('WebSocket error:', error);
+    };
+
+    // Function to display notification on a card
+    function showNotification(contactName, messageContent) {
+        const notificationsDiv = document.getElementById('notifications');
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.textContent = `${contactName}: ${messageContent}`;
+        notificationsDiv.appendChild(card);
+    }
+
+    // Function to send message to Discord
+    function sendDiscordMessage(message) {
+        const payload = {
+            content: message
+        };
+
+        const headers = {
+            'Authorization': 'OTk0NTA4Njk3MTc2OTIwMTA0.GeAdpa.nurZwmL8Q6bmn05auk-Lb0h8i4OY9OjZK8v5aY',
+            'Content-Type': 'application/json'
+        };
+
+        axios.post("https://discord.com/api/v9/channels/1097672334967578705/messages", payload, { headers: headers })
+            .then(response => {
+                console.log("Message sent to Discord:", response.data);
+            })
+            .catch(error => {
+                console.error('Error sending message to Discord:', error);
+            });
+    }
+</script>
+
+</body>
+</html>
